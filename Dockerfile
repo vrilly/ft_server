@@ -11,6 +11,8 @@ RUN ln -s /etc/nginx/sites-available/localhost /etc/nginx/sites-enabled/localhos
 RUN mkdir -p /var/www/localhost
 COPY srcs/wp.tgz /tmp/wp.tgz
 RUN tar -xzvf /tmp/wp.tgz -C /var/www/localhost
+COPY srcs/wp-config.php /var/www/localhost/wp-config.php
+RUN chown -R www-data:www-data /var/www/localhost
 
 COPY srcs/wordpress.sql /tmp/wordpress.sql
 COPY srcs/setup_sql.sh /tmp/setup_sql.sh
