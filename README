@@ -1,0 +1,3 @@
+re.sh: Terminates running ft_server containers, (re)builds image and runs new container
+
+To turn autoindex off just change srcs/autoindex.conf
